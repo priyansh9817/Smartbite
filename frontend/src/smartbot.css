@@ -1,0 +1,227 @@
+/* Floating FAB button */
+.smartbot-fab {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 63px;
+  height: 63px;
+  background: linear-gradient(145deg, #ffffff, #ffe7d0);
+  border-radius: 50%;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  z-index: 9999;
+}
+.smartbot-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.34);
+}
+
+/* Modal Box */
+.smartbot-modal {
+  position: fixed;
+  bottom: 95px;
+  right: 22px;
+  width: 350px;
+  height: 470px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: popUp 0.3s ease forwards;
+  z-index: 9999;
+}
+
+/* Popup animation */
+@keyframes popUp {
+  from {
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.smartbot-header {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(130deg, #ff8800, #ff6e00);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Chat area */
+.smartbot-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Mood label section */
+.mood-select {
+  padding: 8px 12px;
+  border-bottom: 1px solid #efefef;
+}
+.mood-select select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #d7d7d7;
+  font-size: 14px;
+  background: #fafafa;
+}
+
+/* Messages Section */
+.smartbot-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* Chat bubbles */
+.msg {
+  margin: 10px 0;
+}
+.msg .txt {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 78%;
+  font-size: 14.2px;
+  line-height: 1.45;
+  animation: fadeMsg 0.2s ease;
+}
+@keyframes fadeMsg {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.msg.bot {
+  text-align: left;
+}
+.msg.bot .txt {
+  background: #f2f2f2;
+  color: #373737;
+}
+.msg.user {
+  text-align: right;
+}
+.msg.user .txt {
+  background: #ff9d55;
+  color: #ffffff;
+}
+
+/* Input section */
+.smartbot-input {
+  padding: 10px;
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+  gap: 8px;
+}
+.smartbot-input input {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+.smartbot-input input:focus {
+  border-color: #ff7a1a;
+}
+.smartbot-input button {
+  padding: 9px 16px;
+  background: linear-gradient(130deg, #ff8800, #ff6e00);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.smartbot-input button:hover {
+  opacity: 0.92;
+}
+
+/* Footer */
+.smartbot-footer {
+  padding: 6px;
+  text-align: center;
+}
+.smartbot-footer button {
+  background: transparent;
+  border: none;
+  color: #ff7a1a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.smartbot-footer button:hover {
+  opacity: 0.7;
+}
+/* Category chips */
+.bot-category-container {
+  padding: 10px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid #eee;
+  justify-content: center;
+}
+
+.category-chip {
+  background: #ff7a1a;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.category-chip:hover {
+  background: #e36800;
+  transform: translateY(-1px);
+}
+
+/* Separate mood suggestion */
+.mood-trigger {
+  margin-top: 6px;
+  text-align: center;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 16px;
+  background: #2e2e2e;
+  color: white;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.2s;
+}
+.mood-trigger:hover {
+  opacity: 0.85;
+}
